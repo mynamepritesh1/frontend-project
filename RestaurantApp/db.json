@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 3,
+      "name": "pritesh",
+      "email": "pritesh@gmail.com",
+      "mobile": 919191919,
+      "address": "abcd,xyz,234`",
+      "services": "tea,coffee"
+    },
+    {
+      "id": 4,
+      "name": "priyanka",
+      "email": "akash@gmail.com",
+      "mobile": 12345667,
+      "address": "xyz,abc,123",
+      "services": "tea"
+    }
+  ],
+  "signup": [
+    {
+      "name": "pritesh",
+      "email": "pritesh@gmail.com",
+      "mobile": "123456",
+      "password": "12345",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

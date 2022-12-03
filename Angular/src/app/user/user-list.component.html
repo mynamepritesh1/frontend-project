@@ -1,0 +1,155 @@
+<h1>{{title}}</h1>
+<!-- click Event -->
+<h1>Click Event</h1>
+<button (click)="myName('click event')">get my Name</button>
+<h1>{{name}}</h1>
+
+<hr>
+<!-- keyup/keydown/keyup-enter events -->
+<h1>keyup/keydown/events</h1>
+<input type="text" #box (keyup.enter)="myName(box.value)"/>
+<br><br>
+<hr>
+<!-- blur -->
+<h1>blur</h1>
+<input type="text"  (blur)="myName('blue event')"/>
+<hr>  
+<!-- mouseover -->
+<h1>Mouseover</h1>
+ <div (mouseover)="myName('mouse in')" style="background-color:blueviolet">
+Mouse Events
+</div>
+<hr>
+<!--get text box value -->
+<h1>get textbox value</h1>
+<input type="text" (keyup)="getVal($any($event.target).value)"/>
+<h2>{{currentVal}}</h2>
+<hr>
+<!-- Property binding -->
+<h1>Property Binding</h1> 
+<input type="text" [disabled]="disabledBox" [value]="name">
+<br> <br>
+<input type="text" disabled value="{{name}}" />
+<br> <br>
+<button (click)="enableBox()">Enable TextBox</button>
+
+<hr>
+<!-- condition in angular -->
+<h1>condition in angular</h1>
+<!-- if condition -->
+<!-- <h2 *ngIf="show=='yes';then ifBlock else elseBlock">if Block</h2> -->
+
+<!-- condition string -->
+<ng-template #ifBlock>
+    <h2>condition string</h2>
+</ng-template>
+
+<!-- else condition -->
+<ng-template #elseBlock>
+    <h1>else block</h1>
+</ng-template>
+
+<!-- Property binding -->
+<ng-template [ngIf]="show=='no'">
+<h1>No block</h1>
+</ng-template>
+ 
+<hr>
+<!-- switch case -->
+<h2>switch case</h2>
+<div [ngSwitch]="color">
+    <h2 style="color: red;" *ngSwitchCase="'red'">Red</h2>
+    <h2 style="color: greenyellow;" *ngSwitchCase="'green'">Green</h2>
+    <h2 style="color: brown" *ngSwitchDefault>brown</h2>
+</div>
+
+
+<hr>
+loop in Angular
+<h1>loop in Angular</h1>
+<h2>1. for Loop</h2>
+    <table border="2">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+        <tr *ngFor="let item of data">
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+
+        </tr>
+    </table>
+
+    <hr>
+    <!-- Simple form inc Angular -->
+    <h1> Simple form in Angular</h1>
+    <form #simpleForm="ngForm" (ngSubmit)="getUserValue(simpleForm.value)">
+        <input type="text" ngModel name="username" placeholder="Enter your name"><br><br>
+        <input type="text" ngModel name="age" placeholder="Enter your age"><br><br>
+        <input type="email" ngModel name="gmail" placeholder="Enter your email address"><br><br>
+        <Button>Save</Button>
+
+
+    </form>
+    <hr>
+    <!-- style Binding in Angular -->
+<h1>Style Binding in Angular </h1>
+       <!-- normal style -->
+    <h1 style="color: red;">Header</h1>
+    <!-- binding style -->
+    <h1 [style.color]="'green'">binding style</h1>
+    <h1 [style.backgroundColor]="'yellow'">binding style</h1>
+    <!-- dynamic style -->
+
+    <h1 [style.color]="err?'red':'green'">conditional style</h1>
+
+    <h1 [style.color]="color">Dynamic style</h1>
+
+    <Button (click)="updatecolor()">Update color</Button>
+<hr>
+
+<!-- bootstrap in angular -->
+<h1>bootstrap in angular </h1>
+<p>
+    <ngb-alert [dismissible]="false">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </ngb-alert>
+  </p>
+
+<hr>
+  <!-- material used in Angular -->
+  <h1>material used in angular</h1>
+  <button mat-button color="primary">Primary</button>
+  <button mat-button color="accent">Accent</button>
+  <button mat-button color="warn">Warn</button>
+  <button mat-button disabled>Disabled</button>
+
+  <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+
+  <hr>
+  <!-- pass data parent to child Componant in angular -->
+  <h1>pass data from parent to child</h1>
+<div class="box">
+<h2>{{hero.name}}</h2>
+<h2>{{hero.age}}</h2>
+<h2>{{hero.address}}</h2>
+
+
+</div>
+<!-- pipe in Angular -->
+<hr>
+<h1>Pipe in Angular</h1>
+<h2>{{name | titlecase}}</h2>
+<h2>{{today| date:'fullDate'}}</h2>
+<h2>{{val | currency:'INR'}}</h2>
+<h2>{{slice | slice:2.5}}</h2>
+
+<hr>
+<h1 appCustomstyle>custom Directive in Angular</h1>
+<h2 appCustomstyle>Normal Heading </h2>
+<h2 appCustomstyle>Custome Heading</h2>
+
+<hr>
+<!-- services in angular -->
+<h1>Services in Angular<h1>
+    <h2>{{Name}}</h2>
